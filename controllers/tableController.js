@@ -1,8 +1,10 @@
 const Table = require("../models/tableModel");
-const dotenv = require("dotenv").config();
+const dotenv = require("dotenv");
 const { google } = require("googleapis");
-const credentials = JSON.parse(process.env.GOOGLE_CLOUD_CREDENTIALS);
 
+dotenv.config();
+const credentials = JSON.parse(process.env.GOOGLE_CLOUD_CREDENTIALS);
+console.log(credentials, "credentials");
 // Configure the Google Sheets API client
 const auth = new google.auth.GoogleAuth({
   credentials,
